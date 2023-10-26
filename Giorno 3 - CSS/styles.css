@@ -1,0 +1,42 @@
+.container {
+    width: 60%;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+}
+
+header > img {
+    width: 180px;
+}
+
+header > p {
+    color: #107369;
+    background-color: #FDFBF1;
+    height: 2em;
+    padding-top: 15px;
+    border-top: 2px solid #F2DCB3;
+}
+
+figure img {
+    width: 100%;
+}
+
+figcaption {
+    color: gray;
+    text-align: center;
+}
+
+.featured {
+    color: #A60303;
+}
+
+a {
+    color: #107369;
+}
+
+h2 {
+    font-size: 1.2em;
+}
+
