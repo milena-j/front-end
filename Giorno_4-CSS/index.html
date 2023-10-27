@@ -14,30 +14,30 @@
   </head>
 
   <body>
-    <header>
-      <div>
-        <img src="assets/img/logo.svg" alt="logo del blog"/>
-        <p>Epicode - Il blog dei developers </p>
+    <header class="ombra">
+        <div>
+          <img src="assets/img/logo.svg" alt="logo del blog"/>
+          <p>Epicode - Il blog dei developers </p>
+        <nav>
+          <ul>
+            <li><i class="fas fa-angle-double-right fa-xs" style="color: #ffffff;"></i><a href="index.html" title="Home Page"> Home </a><i class="fas fa-angle-double-left fa-xs" style="color: #ffffff;"></i></li>
+            <li><i class="fas fa-angle-double-right fa-xs" style="color: #ffffff;"></i><a href="articoli.html" title="Elenco degli articoli tecnici pubblicati"> Articoli </a><i class="fas fa-angle-double-left fa-xs" style="color: #ffffff;"></i></li>
+            <li><i class="fas fa-angle-double-right fa-xs" style="color: #ffffff;"></i><a href="contatti.html" title="Candidati inviando un tuo cv"> Lavora con noi </a><i class="fas fa-angle-double-left fa-xs" style="color: #ffffff;"></i></li>
+          </ul>
+        </nav>
       </div>
-      <nav>
-        <ul>
-          <li><i class="fas fa-angle-double-right fa-xs" style="color: #ffffff;"></i><a href="index.html" title="Home Page"> Home </a><i class="fas fa-angle-double-left fa-xs" style="color: #ffffff;"></i></li>
-          <li><i class="fas fa-angle-double-right fa-xs" style="color: #ffffff;"></i><a href="articoli.html" title="Elenco degli articoli tecnici pubblicati"> Articoli </a><i class="fas fa-angle-double-left fa-xs" style="color: #ffffff;"></i></li>
-          <li><i class="fas fa-angle-double-right fa-xs" style="color: #ffffff;"></i><a href="contatti.html" title="Candidati inviando un tuo cv"> Job </a><i class="fas fa-angle-double-left fa-xs" style="color: #ffffff;"></i></li>
-        </ul>
-      </nav>
     </header>
   
     <main>
-      <article>
+      <article class="ombra">
         <h1>Come creare un template per i post</h1>
-        <p><i class="fas fa-pen-square fa-sm" style="color: #aaaaaa;"></i> di Mario Rossi - <span>pubblicato il 25-10-2020</span></p>
+        <p class="grigio"><i class="fas fa-pen-square fa-sm"></i> di Mario Rossi - <i class="fas fa-clock fa-sm"></i><span> pubblicato il 25-10-2020</span></p>
         <p>La prima cosa da fare è suddividere in blocchi logici la pagina,
           identificando le <strong>parti comuni</strong> da applicare a tutte le
           pagine
         </p>
         <p>Le varie aree saranno quindi suddivise in:</p>
-        <ul>
+        <ul class="elencoPuntanto">
           <li>Contenuti di intestazione del tag <code>&lt;header&gt;</code></li>
           <li>
             Contenuti centrali variabili del tag
@@ -48,13 +48,14 @@
             <code>&lt;footer&gt;</code>
           </li>
         </ul>
+        <br>
         <h2>Formattazione del codice</h2>
         <p>
           Il testo dell'articolo dovrà essere formattato per identificare tutte
           le parti da <strong>selezionare con i CSS</strong>. Perciò i passi
           saranno:
         </p>
-        <ol>
+        <ol class="elencoNumerato">
           <li>
             Progettare su carta il markup finale, assegnando ad ogni specifico
             testo il tag appropriato
@@ -114,6 +115,7 @@
             href="https://jigsaw.w3.org/css-validator/"
             target="blank"
             title="Validatore CSS online del W3C"
+            class="linkBlu"
             >tool online</a
           >
           dedicato allo scopo. Una volta ottimizzato il tutto, avremo raggiunto
@@ -146,40 +148,42 @@
         </section>
       </article>
     </main>
-    <aside>
+
+    <aside class="ombra">
       <h2>Articoli correlati</h2>
       <div>
-        <a
-          href="post2.html"
+          <a 
+          href="post2.html" 
           title="Passaggi guidati per validare correttamente tutto il codice sviluppato"
-          >Validare il codice HTML</a
-        >
-        <p>Categoria: develop</p>
-        <p>Data: 18-9-2020</p>
+          class="linkBlu">Validare il codice HTML
+          </a>
+          <p><i class="fas fa-tag" style="color: #000000;"></i> Categoria: develop</p>
+          <p><i class="fas fa-calendar-alt" style="color: #000000;"></i> Data: 18-9-2020</p>
       </div>
 
       <div>
         <a
           href="post3.html"
           title="Passaggi guidati per controllare e correggere tutto il codice sviluppato"
+          class="linkBlu"
           >Correggere la sintassi</a
         >
-        <p>Categoria: develop</p>
-        <p>Data: 16-9-2020</p>
+        <p><i class="fas fa-tag" style="color: #000000;"></i> Categoria: develop</p>
+        <p><i class="fas fa-calendar-alt" style="color: #000000;"></i> Data: 16-9-2020</p>
       </div>
 
       <div>
         <a
           href="post4.html"
           title="Consigli ed approcci per ridurre il peso della pagina"
-          >Meno Kb nella pagina</a
+          class="linkBlu">Meno Kb nella pagina</a
         >
-        <p>Categoria: ottimizzazione</p>
-        <p>Data: 30-9-2020</p>
+        <p><i class="fas fa-tag" style="color: #000000;"></i> Categoria: ottimizzazione</p>
+        <p><i class="fas fa-calendar-alt" style="color: #000000;"></i> Data: 30-9-2020</p>
       </div>
     </aside>
-    <hr />
-    <footer>
+
+    <footer class="ombra">
       <p>Blog Epicode &copy;2023</p>
       <address>
         Testata online di Mario Rossi, registrata con prot. n.213/2018 - via
@@ -191,5 +195,6 @@
         >
       </address>
     </footer>
+
   </body>
 </html>
