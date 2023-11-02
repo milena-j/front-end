@@ -259,7 +259,7 @@ console.log(me)
 
 console.log("ESERCIZIO 13")
 
-me.skills.pop()
+me.skills.pop();
 
 console.log(me.skills)
 
@@ -272,9 +272,9 @@ console.log("ESERCIZIO 14")
 
 let arr = [];
 
-console.log(arr)
+console.log(arr);
 
-arr.splice(0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+arr.push(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
 console.log(arr)
 
@@ -286,17 +286,28 @@ console.log(arr)
 console.log("ESERCIZIO 15")
 
 /*
-arr.pop()
+arr.pop();
 
 console.log(arr) // tolto ultimo elemento
 
-arr.push("100")
+arr.push("100");
 
 console.log(arr) // aggiunto ultimo elemento
 */
 
 // oppure
 
-arr.splice(9, 1, "100")
+arr.splice(9, 1, 100);
+/* alternativa migliore: 
+arr.splice[arr.length-1, 1, 100]; */
 
 console.log(arr)
+
+// oppure
+
+/*
+arr[9] = 100;
+console.log(arr)
+*/
+
+// oppure: arr[arr.length-1] = 100;
