@@ -7,12 +7,30 @@
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 function area(l1, l2) {
-    let a = l1 * l2;
-    return a;
+    let risultato = l1 * l2;
+    return risultato;
 }
 
-let a = area(3, 9);
-console.log(a)
+let risultato = area(3, 9);
+console.log(risultato)
+
+//oppure
+
+function area1(l1, l2) {
+    return l1 * l2;
+}
+
+let risultato1 = area1(3, 9);
+console.log(risultato1)
+
+//oppure
+
+const area2 = function (l1, l2) {
+    let risultato2 = l1 * l2;
+    console.log(risultato2)
+}
+
+area2(3, 9)
 
 /* ESERCIZIO 2
  Scrivi una funzione di nome "crazySum", che riceve 
@@ -36,12 +54,11 @@ console.log(crazySum(5, 10))
 
 //oppure
 
-function crazySum2(x, y) {
-    if (x !== y) {
-        return x + y;
-    } else {
-        return (x + y) * 3;
+function crazySum2(num1, num2) {
+    if (num1 === num2) {
+        return (num1 + num2) * 3;
     }
+    return num1 + num2;
 }
 
 console.log(crazySum2(10, 10))
@@ -99,6 +116,8 @@ function boundary(n) {
 }
 
 console.log(boundary(50))
+console.log(boundary(400))
+console.log(boundary(500))
 
 /* ESERCIZIO 5
  Scrivi una funzione di nome "epify" che accetta 
@@ -119,7 +138,22 @@ function epify(str) {
     }
 }
 
-console.log(epify(" non è contenuto nella stringa"))
+console.log(epify(": non è contenuta nella stringa"))
+console.log(epify("EPICODE è contenuto nella stringa"))
+
+//oppure
+
+function epify1(str1) {
+    if (str1.indexOf("EPICODE" === 0)) {
+        return str1;
+    }
+    return "EPICODE" + str1;
+}
+
+console.log(epify1(": non è contenuta nella stringa"))
+console.log(epify1("EPICODE è contenuto nella stringa"))
+
+//rivedi soluzione
 
 /* ESERCIZIO 6
  Scrivi una funzione di nome "check3and7" che 
@@ -175,6 +209,17 @@ function reverseString(string) {
 
 console.log(reverseString("EPICODE"))
 
+//oppure
+
+function reverseString1(stringa) {
+    let arrStr = stringa.split("");
+    let arrStrRev = arrStr.reverse("");
+    let arrStrRevJoin = arrStrRev.join("");
+    return arrStrRevJoin;
+}
+
+console.log(reverseString1("EPICODE"))
+
 /* ESERCIZIO 8
  Scrivi una funzione di nome "upperFirst", 
  che riceve come parametro una stringa formata 
@@ -186,13 +231,21 @@ console.log(reverseString("EPICODE"))
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 function upperFirst(frase) {
-    
-    let words = frase.split(" ");  //creo un array in cui inserire i singoli elementi della stringa
 
-    for (let i = 0; i < words.length; i++) {     // itero ogni elemento dell'array
-        let splittata = words[i].split("");     // inserisco in una variabile i singoli caratteri della parola
-        splittata[0] = splittata[0].toUpperCase(); // trasformo il primo carattere in maiuscolo e lo inserisco all'inice 0 della var
-        words[i] = splittata.join("");          // riunisco i caratteri in una parola unica, salvandola nell'array words
+    // creo un array in cui inserire i singoli elementi della stringa
+    let words = frase.split(" ");
+
+    // itero ogni elemento dell'array
+    for (let i = 0; i < words.length; i++) {
+
+        // inserisco in una variabile i singoli caratteri della parola
+        let splittata = words[i].split("");
+
+        // trasformo il primo carattere in maiuscolo e lo inserisco all'inice 0 della var
+        splittata[0] = splittata[0].toUpperCase();
+
+        // riunisco i caratteri in una parola unica, salvandola nell'array words
+        words[i] = splittata.join("");
     }
     return words.join(" ");
 }
@@ -201,19 +254,21 @@ console.log(upperFirst("stringa formata da diverse parole"))
 
 // FOR EACH
 
-function upperFirst(frase) {
-    
-    let words = frase.split(" ");  //creo un array in cui inserire i singoli elementi della stringa
+function upperFirst1(frase) {
 
-    for(let i in words){
-        let splittata = words[i].split("");     
-        splittata[0] = splittata[0].toUpperCase(); 
+    let words = frase.split(" ");
+
+    for (let i in words) {
+        let splittata = words[i].split("");
+        splittata[0] = splittata[0].toUpperCase();
         words[i] = splittata.join("");
     }
     return words.join(" ");
 }
 
-console.log(upperFirst("una stringa formata da diverse parole"))
+console.log(upperFirst1("una stringa formata da diverse parole"))
+
+// oppure (rivedi soluzione)
 
 /* ESERCIZIO 9
  Scrivi una funzione di nome "cutString", 
@@ -226,10 +281,10 @@ console.log(upperFirst("una stringa formata da diverse parole"))
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 function cutString(stringa) {
-    return stringa.slice(1, stringa.length -1);
+    return stringa.slice(1, stringa.length - 1); //si può scrivere anche solo 1, -1
 }
 
-console.log(cutString("una stringa formata da diverse parole"))
+console.log(cutString("una stringa"))
 
 /* ESERCIZIO 10
  Scrivi una funzione di nome "giveMeRandom", 
@@ -241,11 +296,13 @@ console.log(cutString("una stringa formata da diverse parole"))
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 function giveMeRandom(n) {
+    
     let arr = [];
-    for(let i=0; i<n; i++){
+    
+    for (let i = 0; i < n; i++) {
         arr.push(Math.round(Math.random() * 10));
     }
-    return arr
+    return arr;
 }
 
 console.log(giveMeRandom(5))
