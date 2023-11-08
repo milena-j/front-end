@@ -6,7 +6,7 @@
   in maiuscolo e mostrala con un console.log().
 */
 
-let strConcat = (str1, str2) => {
+const strConcat = (str1, str2) => {
   sommaStr = str1.slice(0, 2).concat(str2.slice(-3)).toUpperCase();
 }
 
@@ -29,43 +29,70 @@ function random100(arr) {
   } return box;
 }
 
-let random = random100(10);
-console.log(random);
+console.log(random100(10));
 
 /* ESERCIZIO 3 (filter)
   Scrivi una funzione per ricavare solamente i valori 
   PARI da un array composto da soli valori numerici
 */
 
-let arrNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+/* così è una variabile
 
-let arrFiltrato = arrNum.filter((numPari) => numPari % 2 === 0);
-
+const arrNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const arrFiltrato = arrNum.filter((numPari) => numPari % 2 === 0);
 console.log(arrFiltrato);
+*/
+
+// così è una funzione (freccia)
+
+const getPari = (filterArr) => {
+  return filterArr.filter((numPari) => numPari % 2 === 0)
+}
+
+console.log(getPari([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
 
 /* ESERCIZIO 4 (forEach)
   Scrivi una funzione per sommare i numeri contenuti 
   in un array
 */
 
+/* così è una variabile
+
 let val = 0;
-
 let arrNum1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
 arrNum1.forEach((num) => { val += num });
-
 console.log(val);
+*/
+
+// così è una funzione (freccia)
+
+const sumEach = (arrNum1) => {
+  let val = 0;
+  arrNum1.forEach((num) => val += num);
+  return val;
+}
+
+console.log(sumEach([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
 
 /* ESERCIZIO 5 (reduce)
   Scrivi una funzione per sommare i numeri contenuti 
   in un array
 */
 
+/* così è una variabile
+
 let arrNum2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
 let somma = arrNum2.reduce((acc, val) => acc + val, 0);
-
 console.log(somma);
+*/
+
+// così è una funzione (espressione)
+
+const sumReduce = function (arrNum2) {
+  return arrNum2.reduce((acc, val) => acc + val, 0);
+}
+
+console.log(sumReduce([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
 
 /* ESERCIZIO 6 (map)
   Scrivi una funzione che, dato un array di soli numeri 
@@ -73,11 +100,20 @@ console.log(somma);
   con tutti i valori del precedente incrementati di n
 */
 
+/* così è una variabile
+
 let arrNum3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let sumMap = arrNum3.map((n) => n + 10);
+console.log(sumMap);
+*/
 
-let sommaN = arrNum3.map((n) => n + 10);
+// così è una funzione
 
-console.log(sommaN);
+function sumMap(arrNum3, n) {
+  return arrNum3.map(ele => ele + n);
+}
+
+console.log(sumMap([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 10));
 
 /* ESERCIZIO 7 (map)
   Scrivi una funzione che, dato un array di stringhe, 
@@ -86,11 +122,20 @@ console.log(sommaN);
   es.: ["EPICODE", "is", "great"] => [7, 2, 5]
 */
 
+/* così è una variabile
+
 let arrStr = ["il", "mio", "array", "di", "stringhe"];
-
 let newArr = arrStr.map((word) => word.length);
-
 console.log(newArr)
+*/
+
+// così è una funzione
+
+function newArr(arrStr) {
+  return arrStr.map(ele => ele.length);
+}
+
+console.log(newArr(["il", "mio", "array", "di", "stringhe"]));
 
 /* ESERCIZIO 8 (forEach o for)
   Scrivi una funzione per creare un array contenente 
@@ -235,17 +280,35 @@ const movies = [
 */
 
 const oldest = (array) => {
+
   let result = { Year: 2023 }
-  array.forEach((movie) => {
-    let currentYear = +(movie.Year)
+
+  array.forEach((film) => {
+    let currentYear = +(film.Year)
     if (currentYear < result.Year) {
-      result = movie
+      result = film
     }
   })
   return result;
 }
 
 console.log(oldest(movies))
+
+// oppure
+
+const getOldest = (array) => {
+
+  let old = array[0];
+
+  array.forEach(film => {
+    if (film.Year < old.Year) {
+      old = film;
+    }
+  })
+  return old;
+}
+
+console.log(getOldest(movies))
 
 /* ESERCIZIO 10
   Scrivi una funzione per ottenere il numero di film 
@@ -254,23 +317,47 @@ console.log(oldest(movies))
 
 console.log(movies.length)
 
+//funzione:
+
+const countMovies = (arr) => arr.length
+
+console.log("Numero film: " + countMovies(movies))
+
 /* ESERCIZIO 11 (map)
   Scrivi una funzione per creare un array con solamente 
   i titoli dei film contenuti nell'array fornito.
 */
 
-let onlyTitles = movies.map((ele) => ele.Title);
-
+/*variabile:
+const onlyTitles = movies.map((ele) => ele.Title);
 console.log(onlyTitles)
+*/
+
+//funzione
+
+function onlyTitles(arr) {
+  return arr.map(film => film.Title)
+}
+
+console.log(onlyTitles(movies))
 
 /* ESERCIZIO 12 (filter)
   Scrivi una funzione per ottenere dall'array fornito 
   solamente i film usciti nel millennio corrente.
 */
 
-let millennioCorrente = movies.filter((movie) => movie.Year >= 2000)
-
+/*variabile:
+const millennioCorrente = movies.filter((movie) => movie.Year >= 2000)
 console.log(millennioCorrente)
+*/
+
+//funzione
+
+function millennioCorrente(arr) {
+  return arr.filter(film => film.Year >= 2000)
+}
+
+console.log(millennioCorrente(movies))
 
 /* ESERCIZIO 13 (reduce)
   Scrivi una funzione per calcolare la somma di tutti 
@@ -278,9 +365,23 @@ console.log(millennioCorrente)
   nell'array fornito.
 */
 
-let sommaAnni = movies.reduce((acc, val) => acc + +(val.Year), 0);
-
+/* variabile:
+const sommaAnni = movies.reduce((acc, film) => acc + +film.Year, 0);
 console.log(sommaAnni);
+*/
+
+// funzione:
+
+const sommaAnni = (arr) => {
+  return arr.reduce((acc, film) => acc + +film.Year, 0);
+}
+console.log(sommaAnni(movies));
+
+/*
+acc è la var che uso per accumulare i valori,
+a cui sommare i gli anni dei film (film.Year),
+a partire da 0 (l'ultimo valore)
+*/
 
 /* ESERCIZIO 14 (find)
   Scrivi una funzione per ottenere dall'array fornito 
@@ -288,9 +389,15 @@ console.log(sommaAnni);
     come parametro).
 */
 
-let film = movies.find(movie => movie.imdbID === "tt0057261")
-
+/* variabile:
+const film = movies.find(movie => movie.imdbID === "tt0057261")
 console.log(film)
+*/
+
+const searchFilm = function (arr, id) {
+  return arr.find(film => film.imdbID === id)
+}
+console.log(searchFilm(movies, "tt0057261"))
 
 /* ESERCIZIO 15 (findIndex)
   Scrivi una funzione per ottenere dall'array fornito 
@@ -298,3 +405,7 @@ console.log(film)
   come parametro.
 */
 
+const searchIndexFilm = function (arr, year) {
+  return arr.findIndex(film => film.Year === year)
+}
+console.log(searchIndexFilm(movies, "2012"))
