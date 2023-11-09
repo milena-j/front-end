@@ -101,7 +101,7 @@ hideFirstUl();
 
 const paintItGreen = function () {
     const green = document.querySelectorAll("ul");
-    green.forEach (ele => ele.style.backgroundColor = "green");
+    green.forEach(ele => ele.style.backgroundColor = "green");
 }
 
 paintItGreen();
@@ -136,11 +136,66 @@ const revealFooterLink = function () {
 */
 
 const generateTable = function () {
-    let selezione = document.getElementById("tableArea");
-    let tabella = document.createElement("table");
 
+    // seleziono un nodo radice
+    let divTableArea = document.querySelector("#tableArea");
 
+    // creo un tag tabella
+    let table = document.createElement("table");
+    // table.style.border = 
+
+    // creo le righe
+    let tr = document.createElement("tr");
+
+    // creo l'intestazione di tabella e il suo contenuto
+    let th1 = document.createElement("th");
+    th1.innerText = "Immagine";
+    let th2 = document.createElement("th");
+    th2.innerText = "Nome Prodotto";
+    let th3 = document.createElement("th");
+    th3.innerText = "Quantità";
+    let th4 = document.createElement("th");
+    th4.innerText = "Prezzo";
+
+    // appendo i nodi th alle righe
+    tr.appendChild(th1);
+    tr.appendChild(th2);
+    tr.appendChild(th3);
+    tr.appendChild(th4);
+
+    // appendo il nodo tr alla tabella 
+    table.appendChild(tr);
+
+    let prodotti = ["prod 1", "prod 2", "prod 3", "prod 4", "prod 5"]
+
+    // appendo la tabella
+    divTableArea.appendChild(table);
+
+    // faccio un ciclo per popolare la tabella
+    for (let i = 0; i < 5; i++) {
+        let tr = document.createElement("tr");
+
+        let td1 = document.createElement("td");
+        td1.innerHTML = "Immagine"; //link img <img src="" />
+        tr.appendChild(td1);
+
+        let td2 = document.createElement("td");
+        td2.innerText = prodotti[i];
+        tr.appendChild(td2);
+
+        let td3 = document.createElement("td");
+        td3.innerText = Math.round(Math.random() * 5);
+        tr.appendChild(td3);
+
+        let td4 = document.createElement("td");
+        td4.innerText = Math.round(Math.random() * 500) + ",00";
+        tr.appendChild(td4);
+
+        table.appendChild(tr);
+    }
 }
+
+generateTable();
 
 /* ESERCIZIO 12
  Crea una funzione che aggiunga una riga alla 
@@ -148,14 +203,48 @@ const generateTable = function () {
  i dati necessari come parametri
 */
 
-const addRow = function () { }
+const addRow = function (img, nome, qt, pz) {
+    //aggiungo riga
+    let tr = document.createElement("tr");
+
+    //aggiungo celle e metto i parametri come valori di innerText
+    let td1 = document.createElement("td");
+    td1.innerHTML = img;
+    tr.appendChild(td1);
+
+    let td2 = document.createElement("td");
+    td2.innerText = nome;
+    tr.appendChild(td2);
+
+    let td3 = document.createElement("td");
+    td3.innerText = qt;
+    tr.appendChild(td3);
+
+    let td4 = document.createElement("td");
+    td4.innerText = pz;
+    tr.appendChild(td4);
+
+    //appendo la riga alla tabella
+    let table = document.querySelector("#tableArea table");
+    table.appendChild(tr);
+}
+
+addRow("tag-img", "nuovo prod", 3, "250,00");
 
 /* ESERCIZIO 14
 Crea una funzione che nasconda le immagini 
 della tabella quando eseguita
 */
 
-const hideAllImages = function () { }
+const hideAllImages = function () {
+    //seleziono i nodi
+    const images = document.querySelectorAll("#tableArea table img");
+    //ciclo per nascondere tutte le img
+    images.forEach(img => img.style.display = "none");
+}
+
+hideAllImages();
+//devo inserire i link, se no non funziona
 
 /* EXTRA ESERCIZIO 15
 Crea una funzione che cambi il colore del 
@@ -163,7 +252,15 @@ h2 con id "changeMyColor" con un colore
 random ad ogni click ricevuto
 */
 
-const changeColorWithRandom = function () { }
+const changeColorWithRandom = function () {
+    let ele = document.querySelector("#changeMyColor");
+    let red = Math.round(Math.random() * 255);
+    let green = Math.round(Math.random() * 255);
+    let blue = Math.round(Math.random() * 255);
+    ele.style.color = `rgb(${red},${green},${blue})`;
+}
+
+changeColorWithRandom();
 
 /* EXTRA ESERCIZIO 16
 Crea una funzione che elimini le vocali 
@@ -172,4 +269,26 @@ da ogni elemento testuale della pagina
 array di ES6)
 */
 
-const deleteVowels = function () { }
+const deleteVowels = function () {
+    let all = document.querySelectorAll("h1, h2, h3, li, a, p, th, td")
+    all.forEach(node => {
+        //console.log(node.innerText)
+        
+        let arrChar = [...node.innerText]
+        //console.log(arrChar)
+        
+        let arrCharFilter = arrChar.filter(char => {
+            char = char.toLowerCase();
+            return char !== 'a' && char !== 'e' && char !== 'i' && char !== 'o' && char !== 'u' && char !== 'y'
+        })
+        //console.log(arrCharFilter)
+        
+        let testo = arrCharFilter.join("")
+        //console.log(testo)
+
+        node.innerText = testo
+    })
+};
+
+
+deleteVowels();
