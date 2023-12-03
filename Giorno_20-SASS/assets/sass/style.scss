@@ -1,0 +1,137 @@
+@import "reset";
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: #640FC6;
+    padding: 20px 0;
+    margin-bottom: 40px;
+}
+
+.container {
+    width: 85%;
+    margin: 0 auto;
+}
+
+nav {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    ul {
+        display: flex;
+        list-style: none;
+        gap: 10px;
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        a:hover {
+            color: orange;
+        }
+    }
+}
+
+.showcase-content {
+    display: flex;
+    position: relative;
+
+    div {
+        width: 55%;
+        opacity: 0;
+        transform: translateY(-20px);
+        animation: 1s linear 0s 1 fadeFromTop forwards;
+    }
+
+    h1 {
+        font-size: 96px;
+        color: #28064F;
+        opacity: 0;
+        transform: translateY(-20px);
+        animation: 1s linear 1s 1 fadeFromTop forwards;
+    }
+
+    p {
+        font-size: 24px;
+        color: white;
+        opacity: 0;
+        transform: translateY(-20px);
+        animation: 1s linear 2s 1 fadeFromTop forwards;
+    }
+
+    .btn {
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+    }
+
+    .btn-primary {
+        background: #0B6DFF;
+        opacity: 0;
+        transform: translateY(-20px);
+        animation: 1s linear 3s 1 fadeFromTop forwards, 1s linear 3s 1 fadeFromLeft forwards;
+    }
+
+    .btn-secondary {
+        background: #FF8700;
+        opacity: 0;
+        transform: translateY(-20px);
+        animation: 1s linear 3.25s 1 fadeFromTop forwards, 1s linear 3.25s 1 fadeFromLeft forwards;
+    }
+
+    .btn-tertiary {
+        background: #4CB051;
+        opacity: 0;
+        transform: translateY(-20px);
+        animation: 1s linear 3.5s 1 fadeFromTop forwards, 1s linear 3.5s 1 fadeFromLeft forwards;
+    }
+
+    img {
+        width: 40%;
+        border: 1px solid white;
+        border-radius: 20px;
+        position: absolute;
+        right: 0;
+        bottom: -250px;
+        animation: 1.5s ease-out 0s 1 fadeFromBottom;
+    }
+}
+
+/* ANIMAZIONE TESTO E BOTTONI */
+
+@keyframes fadeFromTop {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ANIMAZIONE IMG DAL BASSO */
+
+@keyframes fadeFromBottom {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
