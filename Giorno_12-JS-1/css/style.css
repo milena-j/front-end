@@ -1,0 +1,32 @@
+html {
+    background-color: #0E0B1D;
+}
+
+h1, h2, h3, #appointments {
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#appointments {
+    display: none;
+}
+
+.container {
+    padding: 1em;
+}
+
+.color-epic {
+    color: #A9409F;
+}
+
+.selected {
+    background-color: #131334;
+}
+
+.day {
+    display: inline-block;
+    padding: 0.5em;
+    width: 2.85em;
+}
