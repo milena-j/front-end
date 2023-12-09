@@ -19,18 +19,13 @@ header {
     text-align: center;
     color: white;
     text-transform: uppercase;
-    background: rgb(19,91,106);
-    background: linear-gradient(0deg, rgba(19,91,106,1) 0%, rgba(4,148,180,1) 100%);
+    background: rgb(19, 91, 106);
+    background: linear-gradient(0deg, rgba(19, 91, 106, 1) 0%, rgba(4, 148, 180, 1) 100%);
 }
 
 header img {
     width: 300px;
     padding-top: 25px;
-
-}
-
-header p {
-    padding: 30px 0;
 }
 
 .grigio {
@@ -45,13 +40,24 @@ nav ul li:last-child {
     padding: 5px 0 25px 0;
 }
 
+header div nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+header div nav ul li a,
+header div p {
+    font-weight: 500;
+}
+
 .ombra {
     box-shadow: 0 3px 5px #232323;
 }
 
 /* MAIN */
 
-article, aside {
+article,
+aside {
     background-color: white;
     width: 400px;
     padding: 20px;
@@ -96,13 +102,13 @@ strong {
 /* TABELLE */
 
 table {
-   width: 100%;
-   border-collapse: 1px solid lightgray;
-   border-bottom: 3px solid rgb(68, 134, 199);
+    width: 100%;
+    border-collapse: 1px solid lightgray;
+    border-bottom: 3px solid rgb(68, 134, 199);
 }
 
 thead {
-    background-color:rgb(68, 134, 199);
+    background-color: rgb(68, 134, 199);
     font-weight: 400;
     color: white;
 }
@@ -116,9 +122,11 @@ tr {
     text-align: center;
 }
 
-th, td {
+th,
+td {
     vertical-align: middle;
-    min-width: 120px;;
+    min-width: 120px;
+    ;
     word-wrap: normal;
 }
 
@@ -145,11 +153,12 @@ section {
     padding: 15px;
 }
 
-section h2, aside h2 {
+section h2,
+aside h2 {
     text-transform: uppercase;
     text-align: center;
     font-size: 20pt;
-    font-weight: 500; 
+    font-weight: 500;
 }
 
 /* FORM */
@@ -184,7 +193,7 @@ aside div {
 
 aside div p:last-child {
     text-align: right;
-} 
+}
 
 .dataArticolo {
     padding-top: 20px;
@@ -200,8 +209,8 @@ footer {
     box-sizing: 400px;
     text-align: center;
     color: white;
-    background: rgb(3,81,98);
-    background: linear-gradient(0deg, rgba(3,81,98,1) 0%, rgba(5,128,154,1) 100%);
+    background: rgb(3, 81, 98);
+    background: linear-gradient(0deg, rgba(3, 81, 98, 1) 0%, rgba(5, 128, 154, 1) 100%);
 }
 
 footer a {
