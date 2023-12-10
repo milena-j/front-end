@@ -1,0 +1,26 @@
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+
+.modal ul li span,
+.modal ul li button.btn-primary {
+    display: none;
+}
+
+.modal ul li img {
+    width: 5rem;
+    margin-right: 1rem;
+}
+
+.modal ul li button {
+    position: relative;
+    left: 70%;
+    bottom: 50%;
+}
+
+.modal ul li h5 {
+    font-weight: 200;
+    font-size: 95%;
+}
+
+.modal ul li p {
+    font-weight: bold;
+}
