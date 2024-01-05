@@ -1,0 +1,41 @@
+.container {
+    width: 660px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#estrai {
+    margin-top: 20px;
+}
+
+.cellaTabellone,
+.cellaCartella {
+    display: inline-block;
+    background-color: yellow;
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.cellaEstratta {
+    background-color: red;
+} 
+
+#containerTabellone {
+    margin: 20px;
+}
+
+#containerCartelle {
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.cartella {
+    padding: 20px;
+    width: 270px;
+}
+
+.d-flex {
+    display: flex;
+}

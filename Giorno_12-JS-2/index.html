@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tombola</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <main>
+
+            <h1>Tombola</h1>
+
+            <div>
+                <label for="inputCartelle">Inserisci il numero di cartelle desiderato:</label>
+                <input type="number" id="inputCartelle" min="1" max="6" value="1">
+                <button type="button" id="confermaCartelle">Conferma</button>
+            </div>
+
+            <!-- <div>
+                <button type="button" id="iniziaPartita">Inizia partita</button>
+
+            </div> -->
+
+            <div>
+                <button type="button" id="estrai" name="estrai">Estrai un numero</button>
+                <h2>Numero estratto:
+                    <span id="ultimoNumEstratto"></span>
+                </h2>
+            </div>
+
+            <div id="containerTabellone"></div>
+            <div id="containerCartelle" class="d-flex"></div>
+
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
